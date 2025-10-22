@@ -42,34 +42,71 @@ The chatbot can:
 ## Backend (FastAPI)
 
 ### Setup
-1. Create a virtual environment:
+1. **Create a virtual environment:**
 ```bash
 python -m venv .env
 ```
-Activate the environment:
-# Windows
+2. **Activate the environment:**
+
 ```
+# WINDOWS
 .env\Scripts\activate
 ```
-# Mac/Linux
 ```
+# MAC/LINUX
 source .env/bin/activate
 ```
 
-Install dependencies:
+3. **Install dependencies:**
 ```
 pip install fastapi uvicorn python-dotenv openai pandas
 ```
 
-Copy .env.example to .env and set your API keys:
+4. **Copy .env.example to .env and set your API keys:**
 
 ```
 OPENROUTER_API_KEY=your_api_key_here
 MODEL_NAME=your_model_name_here
 ```
-Then run
+5. **Then run**
 ```
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+## Frontend (Next.js)
+### Setup
+
+1. **Install dependencies:**
+```bash
+cd FE
+npm install
+```
+
+2. **Run the development server**:
+```
+npm run dev
+```
+3. **Open your browser and visit**:
+```
+http://localhost:3000
+```
+## Quick Start
+Run both the Backend and Frontend simultaneously to start the full application:
+#### Terminal 1 - Backend (FastAPI)
+```
+cd BE
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+#### Terminal 2 - Frontend (Next.js)
+```
+cd FE
+npm install
+npm run dev
+```
+#### After starting:
+```
+Backend API: http://localhost:8000
+Frontend UI: http://localhost:3000
 ```
 ## Features
 
